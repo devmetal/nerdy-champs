@@ -1,0 +1,25 @@
+$sizes: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+@mixin roboto-slab($weight) {
+  font-family: var(--font-family-slab);
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@mixin roboto($weight) {
+  font-family: var(--font-family-roboto);
+  font-optical-sizing: auto;
+  font-weight: $weight;
+  font-style: normal;
+}
+
+@each $size in $sizes {
+  .roboto-slab-#{$size} {
+    @include roboto-slab($size);
+  }
+
+  .roboto-#{$size} {
+    @include roboto($size);
+  }
+}
