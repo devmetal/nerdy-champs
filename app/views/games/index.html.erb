@@ -9,9 +9,13 @@
     </h1>  
     
     <section class="dashboard__controls">
-      <button class="dashboard__controls__create-btn">
-        Create event
-      </button>
+
+      <%= turbo_frame_tag Event.new do %>
+
+      <%= link_to "Create Event", new_event_path,
+          class: "btn btn--primary dashboard__controls__create-btn" %>
+
+      <% end %>
 
       <div class="dashboard__controls__events-list">
         <h2>My events</h2>

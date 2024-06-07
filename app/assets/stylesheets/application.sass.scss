@@ -9,6 +9,13 @@
 // layouts
 @import "layouts/container";
 @import "layouts/dashboard";
+@import "layouts/event";
 
 // components
 @import "components/welcome";
+@import "components/buttons";
+@import "components/events_form";
+@import "components/hero";
+
+// Helpers
+@import "helpers/helpers";

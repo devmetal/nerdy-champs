@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   root 'games#index'
 
   get '/games', to: 'games#index'
+
+  resources :events
 end

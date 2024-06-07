@@ -17,15 +17,7 @@
     border-right: var(--border);
 
     &__create-btn {
-      @include roboto-slab(800);
       width: 100%;
-      border: none;
-      outline: none;
-      font-size: var(--font-size-l);
-      background-color: var(--color-secondary);
-      padding: var(--space-xxs);
-      border-radius: var(--border-radius);
-      box-shadow: var(--shadow-large);
     }
 
     &__events-list {

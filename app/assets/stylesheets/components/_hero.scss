@@ -1,0 +1,13 @@
+.hero {
+  @extend .roboto-slab-700;
+  clip-path: polygon(5.7% 0%, 100% 0%, 93.5% 100%, 0% 100%);
+  font-size: var(--font-size-xxxl);
+  color: black;
+  background-color: var(--color-primary);
+  padding: 0.5rem 2rem 0.5rem 2rem;
+  user-select: none;
+
+  &--inline {
+    display: inline;
+  }
+}

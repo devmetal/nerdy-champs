@@ -1,0 +1,44 @@
+.btn {
+  @include roboto-slab(800);
+
+  cursor: pointer;
+  display: block;
+  text-align: center;
+  border: none;
+  outline: none;
+
+  padding: var(--space-xxs);
+  box-shadow: var(--shadow-large);
+  font-size: var(--font-size-l);
+  border-radius: var(--border-radius);
+
+  transition: all linear 0.2s;
+
+  &--primary {
+    background-color: var(--color-primary);
+    color: black;
+  }
+
+  &--secondary {
+    background-color: var(--color-secondary);
+    color: black;
+  }
+
+  &--cancel {
+    background-color: var(--color-glint);
+    color: black;
+  }
+
+  &:hover {
+    box-shadow: none;
+    color: black;
+  }
+
+  &:active {
+    color: black;
+  }
+
+  &:visited {
+    color: black;
+  }
+}

@@ -11,10 +11,7 @@ class EventsController < ApplicationController
     @event = current_web_user.events.build(event_params)
 
     if @event.save
-      respond_to do |format|
-        format.html { redirect_to @event, notice: 'Event Created' }
-        format.turbo_stream { flash.now[:notice] = 'Event Created' }
-      end
+      redirect_to @event
     else
       render :new, status: :unprocessable_entity
     end
