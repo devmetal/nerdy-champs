@@ -1,0 +1,32 @@
+<%= form_with class: 'events__form',  model: event do |form| %>
+      
+      <div class="events__form__field">
+        <%= form.label :title %>
+        <%= form.text_field :title %>
+        <% @event.errors.full_messages_for(:title).each do |message| %>
+          <div class="events__form__field__errors"><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="events__form__field">
+        <%= form.label :location %>
+        <%= form.text_field :location %>
+        <% @event.errors.full_messages_for(:location).each do |message| %>
+          <div class="events__form__field__errors"><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="events__form__field">
+        <%= form.label :description %>
+        <%= form.text_area :description %>
+        <% @event.errors.full_messages_for(:description).each do |message| %>
+          <div class="events__form__field__errors"><%= message %></div>
+        <% end %>
+      </div>
+
+      <div class="events__form__actions">
+        <%= form.submit class: "btn btn--secondary" %>
+        <%= link_to "Cancel", games_path, class: "btn btn--cancel" %>
+      </div>
+
+    <% end %>
