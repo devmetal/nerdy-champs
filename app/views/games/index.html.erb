@@ -11,7 +11,7 @@
     <section class="dashboard__controls">
 
       <%= link_to "Create Event", new_event_path,
-          class: "btn btn--primary dashboard__controls__create-btn" %>
+          class: "btn btn--primary dashboard__controls__create-btn", data: { "turbo-frame": "_top" } %>
 
       <div class="dashboard__controls__events-list">
         <h2>My events</h2>
