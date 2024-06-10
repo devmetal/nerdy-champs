@@ -1,0 +1,22 @@
+.card {
+  background-color: var(--color-background-dark);
+  box-shadow: var(--shadow-large);
+  border-radius: var(--border-radius);
+
+  &__header {
+    font-size: var(--font-size-l);
+    padding: var(--space-xs);
+    padding-top: var(--space-xs);
+    border-bottom: var(--border);
+    padding-bottom: var(--space-xxs);
+    margin: 0;
+  }
+
+  &__body {
+    padding: var(--space-xs);
+
+    & ul {
+      list-style-type: none;
+    }
+  }
+}

@@ -3,25 +3,32 @@
     <h1 class="welcome__message">Weclome Planeswalker!</h1>
   </header>
 
-  <main class="dashboard">
-    <h1 class="dashboard__header">
-      Upcoming events
-    </h1>  
-    
+  <main class="dashboard"> 
     <section class="dashboard__controls">
 
       <%= link_to "Create Event", new_event_path,
           class: "btn btn--primary dashboard__controls__create-btn", data: { "turbo-frame": "_top" } %>
 
-      <div class="dashboard__controls__events-list">
+      <div class="dashboard__events">
         <h2>My events</h2>
-        <ul>
-          <li>Placeholder 1</li>
-          <li>Placeholder 2</li>
-        </ul>
+        <div class="dashboard__events__list">
+          <% @events.each do |event| %>
+            <article class="card">
+              <h1 class="card__header"><%= event.title %></h1>
+              <div class="card__body">
+                <ul>
+                  <li>Location: <%= event.location %> </li>
+                </ul>
+              </div>
+            </article>
+          <% end %>
+        </div>
       </div>
     </section>
     <section class="dashboard__upcoming">
+      <div class="dashboard__upcoming__header">
+        <h1>Upcoming events</h1>
+      </div>
       <div class="dashboard__upcoming__item">
         <h2>Placeholder 1</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad quia.</p>
