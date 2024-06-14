@@ -1,3 +1,34 @@
 .event {
   margin: var(--space-l);
+
+  &__description {
+    margin-top: var(--space-l);
+  }
+
+  &__participants {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: var(--space-m);
+    margin-top: var(--space-m);
+  }
+
+  &__participant {
+    background-color: var(--color-secondary);
+    padding: var(--space-m);
+    padding-top: var(--space-s);
+    border-radius: var(--border-radius);
+
+    & > h1 {
+      font-size: var(--font-size-m);
+    }
+
+    & > h2 {
+      font-size: var(--font-size-s);
+    }
+
+    &--owner {
+      background-color: var(--color-primary);
+      color: white;
+    }
+  }
 }

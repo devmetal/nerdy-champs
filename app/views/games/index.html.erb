@@ -14,7 +14,9 @@
         <div class="dashboard__events__list">
           <% @events.each do |event| %>
             <article class="card">
-              <h1 class="card__header"><%= event.title %></h1>
+              <h1 class="card__header">
+                <%= link_to event.title, event, data: { "turbo-frame": "_top" } %>
+              </h1>
               <div class="card__body">
                 <ul>
                   <li>Location: <%= event.location %> </li>
