@@ -1,0 +1,7 @@
+<h1>Choose a nickname</h1>
+
+<%= form_with :url => url_for(:controller => 'nick', :action => 'create') do |form| %>
+  <%= form.label :nick, "Your nickname:" %>
+  <%= form.text_field :nick, required: true %>
+  <%= form.submit "Set your nickname" %>
+<% end %>
