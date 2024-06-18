@@ -4,12 +4,12 @@
       (<%= @event.location %>) <%= @event.title %>
     </h1>
     <p class="event__description">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem commodi possimus aspernatur dicta voluptatum, accusamus sequi voluptas ex? Minima eligendi libero reprehenderit repellendus temporibus voluptate aliquid ut, est praesentium quod animi? Veritatis culpa unde odit dolores deserunt libero doloribus porro rem odio quod natus nihil illum explicabo, eos incidunt necessitatibus?
+      <%= @event.description %>
     </p>
     <div class="event__participants">
       <h1>Participants</h1>
       <div class="event__participant event__participant--owner">
-        <h1>LazyPopcornPanda</h1>
+        <h1><%= @event.owner.nick %></h1>
         <h2>Owner of the event</h2>
       </div>
       <div class="event__participant">
