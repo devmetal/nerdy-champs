@@ -3,6 +3,9 @@ class EventsController < ApplicationController
     @event = current_web_user.events.find(params[:id])
   end
 
+  def show_by_code
+  end
+
   def new
     @event = Event.new
   end
@@ -11,7 +14,7 @@ class EventsController < ApplicationController
     @event = current_web_user.events.build(event_params)
 
     if @event.save
-      redirect_to @event
+      redirect_to games_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -20,6 +23,6 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:location, :title)
+    params.require(:event).permit(:location, :title, :description)
   end
 end

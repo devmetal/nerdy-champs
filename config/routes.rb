@@ -13,5 +13,7 @@ Rails.application.routes.draw do
 
   get '/games', to: 'games#index'
 
+  get '/events/:code', to: 'events#show_by_code'
+
   resources :events
 end
