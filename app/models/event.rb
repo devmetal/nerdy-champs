@@ -1,16 +1,12 @@
 class Event < ApplicationRecord
   before_create :set_event_code
 
-  has_one :owner, class_name: 'User'
+  belongs_to :owner, foreign_key: 'user_id', class_name: 'User'
 
   has_and_belongs_to_many :users
 
   validates :location, presence: true
   validates :title, presence: true
-
-  def owner
-    user
-  end
 
   private
 
