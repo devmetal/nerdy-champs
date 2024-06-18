@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :events, dependent: :destroy
+  has_many :events
+
+  has_and_belongs_to_many :events_joined, class_name: 'Events'
 
   validates :nick, presence: true
 end
