@@ -4,6 +4,13 @@ class EventsController < ApplicationController
   end
 
   def show_by_code
+    validator = EventCodeValidator.new(code: params[:code])
+
+    if validator.valid?
+      @event = Event.find_by(code: params[:code])
+    else
+      redirect_to root_path
+    end
   end
 
   def new

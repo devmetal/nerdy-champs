@@ -3,13 +3,18 @@
     <h1 class="welcome__message">Weclome <%= nickname %></h1>
   </header>
 
-  <main class="dashboard"> 
+  <main class="dashboard">
     <section class="dashboard__controls">
 
       <%= link_to "Create Event", new_event_path,
-          class: "btn btn--primary dashboard__controls__create-btn", data: { "turbo-frame": "_top" } %>
+                  class: "btn btn--primary dashboard__controls__create-btn", data: { "turbo-frame": "_top" } %>
 
       <div class="dashboard__events">
+        <%= form_with url: event_by_code_path, method: :get do |form| %>
+          <%= form.label :code, "Event Code" %>
+          <%= form.text_field :code %>
+          <%= form.submit "Find Event By Code" %>
+        <% end %>
         <h2>My events</h2>
         <div class="dashboard__events__list">
           <% @events.each do |event| %>
@@ -33,15 +38,24 @@
       </div>
       <div class="dashboard__upcoming__item">
         <h2>Placeholder 1</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad quia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia
+          at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis
+          itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad
+          quia.</p>
       </div>
       <div class="dashboard__upcoming__item">
         <h2>Placeholder 2</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad quia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia
+          at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis
+          itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad
+          quia.</p>
       </div>
       <div class="dashboard__upcoming__item">
         <h2>Placeholder 3</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad quia.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla aperiam ducimus maiores explicabo, ab officia
+          at! Modi et porro illum, eligendi, vitae minima iure omnis ex culpa placeat officiis est odit sint. Blanditiis
+          itaque minus nihil? Ut, ab maxime deleniti tempora optio, nesciunt hic velit voluptatem nulla sapiente ad
+          quia.</p>
       </div>
     </section>
   </main>
